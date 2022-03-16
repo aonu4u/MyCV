@@ -34,7 +34,7 @@
         </div>
 
         <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-          <form role="form" class="php-email-form">
+          <!-- <form role="form" class="php-email-form">
             <div class="row">
               <div class="form-group col-md-6">
                 <label for="name">Your Name</label>
@@ -59,10 +59,35 @@
               <div class="sent-message">Your message has been sent. Thank you!</div>
             </div>
             <div class="text-center"><button type="submit">Send Message</button></div>
+          </form> -->
+          <form [formGroup]="contactform" class="contactForm" novalidate (ngSubmit)="onSubmit()">
+            <div class="row">
+              <div class="form-group col-md-6">
+                <label>Name<span style="color: #f00;">*</span> :</label>
+                <input type="text" class="form-control" formControlName="name" placeholder="Your name..." />
+                <div class="validationError" *ngIf="contactform.controls['name'].invalid && ( contactform.controls['name'].dirty || contactform.controls['name'].touched)">Name is required...</div>
+              </div>
+              <div class="form-group col-md-6">
+                <label>Email<span style="color: #f00;">*</span> :</label>
+                <input type="text" class="form-control" formControlName="email" placeholder="Your email..." />
+                <div class="validationError" *ngIf="contactform.controls['email'].invalid && ( contactform.controls['email'].dirty || contactform.controls['email'].touched )">Valid e-mail is required...</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Subject<span style="color: #f00;">*</span> :</label>
+              <input type="text" class="form-control" formControlName="subject" placeholder="Enter subject..." />
+              <div class="validationError" *ngIf="contactform.controls['subject'].invalid && ( contactform.controls['subject'].dirty || contactform.controls['subject'].touched)">Subject is required...</div>
+            </div>
+            <div class="form-group">
+              <label>Message<span style="color: #f00;">*</span> :</label>
+              <textarea class="form-control" formControlName="message" rows="10" placeholder="Enter message..."></textarea>
+              <div class="validationError" *ngIf="contactform.controls['message'].invalid && ( contactform.controls['message'].dirty || contactform.controls['message'].touched)">Type your message...</div>
+            </div>
+            <div class="text-center">
+              <button class="btn text-white" style="background-color: #173b6c;" type="submit" [disabled]="contactform.pristine || contactform.invalid">Send Message</button>
+            </div>
           </form>
         </div>
-
       </div>
-
     </div>
   </section>
