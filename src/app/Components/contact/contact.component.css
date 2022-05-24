@@ -110,6 +110,51 @@
   .contact .contactForm textarea {
     padding: 10px 15px;
   }
+  .dialogHeaderSuccessBg {
+    background-color: #d4edda;
+  }
+  .dialogHeaderErrorBg {
+    background-color: #f8d7da;
+  }
+  .dialogHeaderSendingBg {
+    background-color: #cce5ff;
+  }
+  .dialogHeaderSuccessTitle {
+    color: green; 
+    font-weight: 700;
+    margin: -15px 0px 10px 10px;
+  }
+  .dialogHeaderErrorTitle {
+    color: darkred; 
+    font-weight: 700;
+    margin: -15px 0px 10px 10px;
+  }
+  .dialogHeaderSendingTitle {
+    color: #173b6c; 
+    font-weight: 700;
+    margin: -15px 0px 10px 10px;
+  }
+  .dialogClose {
+    text-align: right;
+    margin: 0px;
+    padding: 0px;
+  }
+  .dialogClose button {
+    background: none;
+    border: none;
+    height: 30px
+  }
+  .dialogMsg {
+    padding-top: 20px
+  }
+  .dialogMsg p {
+    text-align: center;
+  }
+  .dialogOkBtn {
+    width: 50px; 
+    margin: 0px auto 0px auto; 
+    padding: 3px;
+  }
   @-webkit-keyframes animate-loading {
     0% {
       transform: rotate(0deg);

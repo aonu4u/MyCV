@@ -13,6 +13,9 @@ import { FooterComponent } from './Components/footer/footer.component';
 import { PortfolioComponent } from './Components/portfolio/portfolio.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AngularTypewriterEffectModule } from 'angular-typewriter-effect';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     NoopAnimationsModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    AngularTypewriterEffectModule,
+    NgbModule,
+    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

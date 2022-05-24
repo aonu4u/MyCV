@@ -1,93 +1,89 @@
 <section id="contact" class="contact">
-    <div class="container">
-
-      <div class="section-title">
-        <h2>Contact</h2>
-        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-      </div>
-
-      <div class="row" data-aos="fade-in">
-
-        <div class="col-lg-5 d-flex align-items-stretch">
-          <div class="info">
-            <div class="address">
-              <i class="bi bi-geo-alt"></i>
-              <h4>Location:</h4>
-              <p>Blue Ridge Society,<br /> Rajiv Gandhi Infotech Park,<br /> Hinjewadi phase-I,<br /> Pune, Maharashtra,<br /> India 411057</p>
-            </div>
-
-            <div class="email">
-              <i class="bi bi-envelope"></i>
-              <h4>Email:</h4>
-              <p>aonu4u@gmail.com</p>
-            </div>
-
-            <div class="phone">
-              <i class="bi bi-phone"></i>
-              <h4>Call:</h4>
-              <p>+91 910 967 4093</p>
-            </div>
-
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7563.837361065535!2d73.73505122058714!3d18.577704569318737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bbe4d114d579%3A0xfec1d303cfb8941a!2sBlue%20Ridge%20Town%20Pune%2C%20Phase%201%2C%20Hinjewadi%20Rajiv%20Gandhi%20Infotech%20Park%2C%20Hinjawadi%2C%20Pimpri-Chinchwad%2C%20Maharashtra%20411057!5e0!3m2!1sen!2sin!4v1647269438366!5m2!1sen!2sin" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+  <div class="container">
+    <div class="section-title">
+      <h2>Contact</h2>
+    </div>
+    <div class="row" data-aos="fade-in">
+      <div class="col-lg-5 d-flex align-items-stretch">
+        <div class="info">
+          <div class="address">
+            <i class="bi bi-geo-alt"></i>
+            <h4>Location:</h4>
+            <p>Blue Ridge Society,<br /> Rajiv Gandhi Infotech Park,<br /> Hinjewadi phase-I,<br /> Pune,
+              Maharashtra,<br /> India 411057</p>
           </div>
-
+          <div class="email">
+            <i class="bi bi-envelope"></i>
+            <h4>Email:</h4>
+            <p>aonu4u@gmail.com</p>
+          </div>
+          <div class="phone">
+            <i class="bi bi-phone"></i>
+            <h4>Call:</h4>
+            <p>+91 910 967 4093</p>
+          </div>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7563.837361065535!2d73.73505122058714!3d18.577704569318737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bbe4d114d579%3A0xfec1d303cfb8941a!2sBlue%20Ridge%20Town%20Pune%2C%20Phase%201%2C%20Hinjewadi%20Rajiv%20Gandhi%20Infotech%20Park%2C%20Hinjawadi%2C%20Pimpri-Chinchwad%2C%20Maharashtra%20411057!5e0!3m2!1sen!2sin!4v1647269438366!5m2!1sen!2sin"
+            frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
         </div>
-
-        <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-          <!-- <form role="form" class="php-email-form">
-            <div class="row">
-              <div class="form-group col-md-6">
-                <label for="name">Your Name</label>
-                <input type="text" name="name" class="form-control" id="name" required>
-              </div>
-              <div class="form-group col-md-6">
-                <label for="name">Your Email</label>
-                <input type="email" class="form-control" name="email" id="email" required>
-              </div>
+      </div>
+      <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+        <form [formGroup]="contactform" class="contactForm" novalidate (ngSubmit)="onSubmit(dialog)">
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label>Name<span style="color: #f00;">*</span> :</label>
+              <input type="text" class="form-control" formControlName="name" placeholder="Your name..." />
+              <div class="validationError"
+                *ngIf="contactform.controls['name'].invalid && ( contactform.controls['name'].dirty || contactform.controls['name'].touched)">
+                Name is required...</div>
             </div>
-            <div class="form-group">
-              <label for="name">Subject</label>
-              <input type="text" class="form-control" name="subject" id="subject" required>
+            <div class="form-group col-md-6">
+              <label>Email<span style="color: #f00;">*</span> :</label>
+              <input type="text" class="form-control" formControlName="email" placeholder="Your email..." />
+              <div class="validationError"
+                *ngIf="contactform.controls['email'].invalid && ( contactform.controls['email'].dirty || contactform.controls['email'].touched )">
+                Valid e-mail is required...</div>
             </div>
-            <div class="form-group">
-              <label for="name">Message</label>
-              <textarea class="form-control" name="message" rows="10" required></textarea>
-            </div>
-            <div class="my-3">
-              <div class="loading">Loading</div>
-              <div class="error-message"></div>
-              <div class="sent-message">Your message has been sent. Thank you!</div>
-            </div>
-            <div class="text-center"><button type="submit">Send Message</button></div>
-          </form> -->
-          <form [formGroup]="contactform" class="contactForm" novalidate (ngSubmit)="onSubmit()">
-            <div class="row">
-              <div class="form-group col-md-6">
-                <label>Name<span style="color: #f00;">*</span> :</label>
-                <input type="text" class="form-control" formControlName="name" placeholder="Your name..." />
-                <div class="validationError" *ngIf="contactform.controls['name'].invalid && ( contactform.controls['name'].dirty || contactform.controls['name'].touched)">Name is required...</div>
-              </div>
-              <div class="form-group col-md-6">
-                <label>Email<span style="color: #f00;">*</span> :</label>
-                <input type="text" class="form-control" formControlName="email" placeholder="Your email..." />
-                <div class="validationError" *ngIf="contactform.controls['email'].invalid && ( contactform.controls['email'].dirty || contactform.controls['email'].touched )">Valid e-mail is required...</div>
-              </div>
-            </div>
-            <div class="form-group">
-              <label>Subject<span style="color: #f00;">*</span> :</label>
-              <input type="text" class="form-control" formControlName="subject" placeholder="Enter subject..." />
-              <div class="validationError" *ngIf="contactform.controls['subject'].invalid && ( contactform.controls['subject'].dirty || contactform.controls['subject'].touched)">Subject is required...</div>
-            </div>
-            <div class="form-group">
-              <label>Message<span style="color: #f00;">*</span> :</label>
-              <textarea class="form-control" formControlName="message" rows="10" placeholder="Enter message..."></textarea>
-              <div class="validationError" *ngIf="contactform.controls['message'].invalid && ( contactform.controls['message'].dirty || contactform.controls['message'].touched)">Type your message...</div>
-            </div>
-            <div class="text-center">
-              <button class="btn text-white" style="background-color: #173b6c;" type="submit" [disabled]="contactform.pristine || contactform.invalid">Send Message</button>
-            </div>
-          </form>
-        </div>
+          </div>
+          <div class="form-group">
+            <label>Subject<span style="color: #f00;">*</span> :</label>
+            <input type="text" class="form-control" formControlName="subject" placeholder="Enter subject..." />
+            <div class="validationError"
+              *ngIf="contactform.controls['subject'].invalid && ( contactform.controls['subject'].dirty || contactform.controls['subject'].touched)">
+              Subject is required...</div>
+          </div>
+          <div class="form-group">
+            <label>Message<span style="color: #f00;">*</span> :</label>
+            <textarea class="form-control" formControlName="message" rows="10"
+              placeholder="Enter message..."></textarea>
+            <div class="validationError"
+              *ngIf="contactform.controls['message'].invalid && ( contactform.controls['message'].dirty || contactform.controls['message'].touched)">
+              Type your message...</div>
+          </div>
+          <div class="text-center">
+            <button class="btn text-white" style="background-color: #173b6c;" type="submit"
+              [disabled]="contactform.pristine || contactform.invalid">Send Message</button>
+          </div>
+        </form>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<ng-template #dialog let-modal>
+  <div class="container">
+    <div [ngClass]="isSendingMsg ? 'row dialogHeaderSendingBg' : messageSent ? 'row dialogHeaderSuccessBg' : 'row dialogHeaderErrorBg'">
+      <p class="dialogClose"><button (click)="modal.dismiss('close')"><i class="fa fa-times"></i></button></p>
+      <h4 [ngClass]="isSendingMsg ? 'dialogHeaderSendingTitle' : messageSent ? 'dialogHeaderSuccessTitle' : 'dialogHeaderErrorTitle'"><i [ngClass]="isSendingMsg ? 'fa fa-envelope' : messageSent ?  'fa fa-check-circle' : 'fa fa-exclamation-circle'" class=""></i>&nbsp;&nbsp;{{dialogTitle}}</h4>
+    </div>
+    <div class="row dialogMsg">
+      <p>
+        <span *ngIf="!isSendingMsg">{{dialogMsg}}</span>
+        <ngb-progressbar *ngIf="isSendingMsg" [value]="1000"></ngb-progressbar>
+      </p>
+    </div>
+    <div *ngIf="!isSendingMsg" class="row" style="padding: 10px">
+      <button type="button" [ngClass]="messageSent ? 'btn btn-success dialogOkBtn' : 'btn btn-danger dialogOkBtn'" (click)="modal.dismiss('OK')">OK</button>
+    </div>
+  </div>
+</ng-template>
