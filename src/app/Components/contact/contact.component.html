@@ -73,8 +73,8 @@
 <ng-template #dialog let-modal>
   <div class="container">
     <div [ngClass]="isSendingMsg ? 'row dialogHeaderSendingBg' : messageSent ? 'row dialogHeaderSuccessBg' : 'row dialogHeaderErrorBg'">
-      <p class="dialogClose"><button (click)="modal.dismiss('close')"><i class="fa fa-times"></i></button></p>
-      <h4 [ngClass]="isSendingMsg ? 'dialogHeaderSendingTitle' : messageSent ? 'dialogHeaderSuccessTitle' : 'dialogHeaderErrorTitle'"><i [ngClass]="isSendingMsg ? 'fa fa-envelope' : messageSent ?  'fa fa-check-circle' : 'fa fa-exclamation-circle'" class=""></i>&nbsp;&nbsp;{{dialogTitle}}</h4>
+      <p class="dialogClose"><button (click)="modal.dismiss('close')"><i class="bi bi-x-lg"></i></button></p>
+      <h4 [ngClass]="isSendingMsg ? 'dialogHeaderSendingTitle' : messageSent ? 'dialogHeaderSuccessTitle' : 'dialogHeaderErrorTitle'"><i [ngClass]="isSendingMsg ? 'bi bi-envelope-fill' : messageSent ?  'bi bi-check-circle-fill' : 'bi bi-exclamation-circle-fill'"></i>&nbsp;&nbsp;{{dialogTitle}}</h4>
     </div>
     <div class="row dialogMsg">
       <p>

@@ -15,7 +15,6 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularTypewriterEffectModule } from 'angular-typewriter-effect';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [
@@ -36,8 +35,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     ReactiveFormsModule,
     FormsModule,
     AngularTypewriterEffectModule,
-    NgbModule,
-    MatProgressBarModule
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

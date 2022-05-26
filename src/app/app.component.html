@@ -1,6 +1,6 @@
 <app-header></app-header>
 <app-home></app-home>
-<main id="main">
+<main id="main" [ngStyle]="isSmallScreen ? {'margin-left':'0px'} : {'margin-left':'300px'}">
   <app-about></app-about>
   <app-skills></app-skills>
   <app-resume></app-resume>
