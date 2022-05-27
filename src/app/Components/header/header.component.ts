@@ -40,4 +40,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
   openSideNav(): void {
     this.showNav = !(this.showNav)
   }
+
+  onMenuClick(): void {
+    if(window.innerWidth <= 1199 && this.showNav) this.showNav = false 
+  }
 }
