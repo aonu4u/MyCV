@@ -12,11 +12,12 @@
     </div>
     <nav id="navbar" class="nav-menu navbar">
       <ul>
-        <li><a href="#home" (click)="onMenuClick()" class="nav-link scrollto"><i class="bx bx-home"></i> <span>Home</span></a></li>
-        <li><a href="#about" (click)="onMenuClick()" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
-        <li><a href="#resume" (click)="onMenuClick()" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
-        <li><a href="#portfolio" (click)="onMenuClick()" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
-        <li><a href="#contact" (click)="onMenuClick()" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
+        <li *ngFor="let component of components">
+          <a [href]="'#'+component.sectionId" (click)="onMenuClick()" [ngClass]="component.active ? 'nav-link scrollto active' :'nav-link scrollto'">
+            <i [ngClass]=component.menuIconClass></i>
+            <span>{{component.name}}</span>
+          </a>
+        </li>
       </ul>
     </nav>
   </div>
